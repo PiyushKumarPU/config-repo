@@ -1,0 +1,17 @@
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/smartdb
+    username: smartuser
+    password: smartpass
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

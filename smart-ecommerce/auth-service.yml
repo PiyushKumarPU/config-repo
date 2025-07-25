@@ -1,0 +1,42 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: auth-service
+  datasource:
+    username: ${spring.datasource.db.user}
+    url: jdbc:postgresql://${spring.datasource.db.host}:${spring.datasource.db.port}/${spring.datasource.schema}
+    password: ${spring.datasource.db.password}
+  jpa:
+    open-in-view: false
+    show_sql: false
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: validate
+  flyway:
+    baseline-on-migrate: true
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    ip-address: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+# Optional: Management endpoints for health check
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    com.instaprepsai.user: DEBUG
+
+springdoc:
+  show-actuator: true

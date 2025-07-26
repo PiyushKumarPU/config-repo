@@ -31,16 +31,16 @@ eureka:
                 uri: lb://user-service
                 predicates:
                   - Path=/users/**
-                filters:
-                  - StripPrefix=1
+                #filters:
+                #  - StripPrefix=1
 
               - id: product-service
                 enabled: true
                 uri: lb://product-service
                 predicates:
                   - Path=/products/**
-                filters:
-                  - StripPrefix=1
+                #filters:
+                #  - StripPrefix=1
 
                                 
               - id: auth-service
@@ -48,8 +48,8 @@ eureka:
                 uri: lb://auth-service
                 predicates:
                   - Path=/auth/**
-                filters:
-                  - StripPrefix=1
+                #filters:
+                #  - StripPrefix=1
 
 logging:
   level:

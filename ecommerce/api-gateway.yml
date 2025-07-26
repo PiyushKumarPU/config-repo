@@ -40,6 +40,15 @@ eureka:
                 filters:
                   - StripPrefix=1
 
+                                
+              - id: auth-service
+                enabled: true
+                uri: lb://auth-service
+                predicates:
+                  - Path=/auth/**
+                filters:
+                  - StripPrefix=1
+
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG

@@ -4,10 +4,10 @@ server:
 spring:
   application:
     name: auth-service
-  datasource:
-    username: ${spring.datasource.db.user:postgres}
-    url: jdbc:postgresql://${spring.datasource.db.host:localhost}:${spring.datasource.db.port:5432}/${spring.datasource.schema:auth_service}
-    password: ${spring.datasource.db.password:kk7CXri2NW1R7i8}
+  #datasource:
+  #  username: ${spring.datasource.db.user:postgres}
+  #  url: jdbc:postgresql://${spring.datasource.db.host:localhost}:${spring.datasource.db.port:5432}/${spring.datasource.schema:auth_service}
+  #  password: ${spring.datasource.db.password:kk7CXri2NW1R7i8}
   jpa:
     open-in-view: false
     show_sql: false

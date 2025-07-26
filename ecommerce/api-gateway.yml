@@ -48,7 +48,6 @@ eureka:
                 uri: lb://auth-service
                 predicates:
                   - Path=/auth/**
-                  - Path=/auth/v3/api-docs/**
                 filters:
                   - StripPrefix=1
 

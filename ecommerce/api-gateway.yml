@@ -19,8 +19,6 @@ eureka:
     gateway:
       server:
         webflux:
-          httpclient:
-            wiretap: true
           discovery:
             locator:
               enabled: true
@@ -50,14 +48,3 @@ eureka:
                   - Path=/auth/**
                 #filters:
                 #  - StripPrefix=1
-
-logging:
-  level:
-    root: DEBUG
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.cloud.gateway.route.RouteDefinitionRouteLocator: DEBUG
-    org.springframework.web.reactive.DispatcherHandler: DEBUG
-    reactor.netty.http.client: DEBUG
-    org.springframework.http.client.reactive.ReactorClientHttpConnector: DEBUG
-    org.springframework.web.reactive.function.client.ExchangeFunctions: DEBUG
-    org.springframework.web.reactive.function.client.ExchangeFunction: DEBUG

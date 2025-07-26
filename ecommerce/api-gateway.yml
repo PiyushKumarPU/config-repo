@@ -1,0 +1,45 @@
+
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    ip-address: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+              - id: user-service
+                enabled: true
+                uri: lb://user-service
+                predicates:
+                  - Path=/users/**
+                filters:
+                  - StripPrefix=1
+
+              - id: product-service
+                enabled: true
+                uri: lb://product-service
+                predicates:
+                  - Path=/products/**
+                filters:
+                  - StripPrefix=1
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG

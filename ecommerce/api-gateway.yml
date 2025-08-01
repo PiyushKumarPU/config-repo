@@ -6,15 +6,6 @@ spring:
   application:
     name: api-gateway
 
-eureka:
-  instance:
-    prefer-ip-address: true
-    hostname: localhost
-    ip-address: 127.0.0.1
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-
   cloud:
     gateway:
       server:
@@ -48,6 +39,15 @@ eureka:
                   - Path=/auth/**
                 #filters:
                 #  - StripPrefix=1
+                
+eureka:
+  instance:
+    prefer-ip-address: true
+    hostname: localhost
+    ip-address: 127.0.0.1
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   zipkin:

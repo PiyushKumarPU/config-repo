@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: service-registry
+    name: discovery-service
 
 eureka:
   client:
